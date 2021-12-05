@@ -12,7 +12,7 @@ import { StudentService } from './student.service';
 })
 export class StudentsComponent implements OnInit {
   students:StudentDTO[]=[];
-  displayedColumns: string[] = ['FirstName','LastName','DateOfBirth','Email','Mobile','Gender'];
+  displayedColumns: string[] = ['FirstName','LastName','DateOfBirth','Email','Mobile','Gender','Edit'];
   dataSource:MatTableDataSource<StudentDTO>=new MatTableDataSource<StudentDTO>();
   @ViewChild(MatPaginator) matPaginator!:MatPaginator;
   @ViewChild(MatSort) matSort!:MatSort;
@@ -22,7 +22,7 @@ export class StudentsComponent implements OnInit {
 
   ngOnInit(): void {
     // Fetch Students
-    this.studentService.getStudent()
+    this.studentService.getStudents()
       .subscribe(
         (sucessResponse) => {
             this.students=sucessResponse;
