@@ -33,6 +33,9 @@ export class StudentService {
         PostalAddress:studentRequest.Address.PostalAddress
     }
      return this.httpClient.put<Student>(this.baseUrl+'Students/'+studentId,UpdateStudentRequest);
-
+  }
+  deleteStudent(studentId:string):Observable<Student>
+  {
+    return this.httpClient.delete<Student>(this.baseUrl+'Students/'+studentId);
   }
 }
