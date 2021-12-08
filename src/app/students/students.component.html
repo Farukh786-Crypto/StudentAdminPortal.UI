@@ -7,7 +7,9 @@
 <div class="container">
   <div class="row end-xs mt-1">
     <div class="col-xs-12">
-      <input type="text" class="search-input" placeholder="search students" [(ngModel)]="filterString" (keyup)="filterStudents()">
+      <input type="text" class="search-input" placeholder="search students" [(ngModel)]="filterString"
+        (keyup)="filterStudents()">
+      <a routerLink="/students/add" mat-raised-button color="primary" class="ml-1"> Add New Students </a>
     </div>
   </div>
   <div class="mt-1 mat-elevation-z8">
@@ -18,13 +20,13 @@
 
       <!-- First Name Column -->
       <ng-container matColumnDef="FirstName">
-        <th mat-header-cell *matHeaderCellDef  mat-sort-header> First Name </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
         <td mat-cell *matCellDef="let element"> {{element.FirstName}} </td>
       </ng-container>
 
       <!-- Last Name Column -->
       <ng-container matColumnDef="LastName">
-        <th mat-header-cell *matHeaderCellDef  mat-sort-header> Last Name </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
         <td mat-cell *matCellDef="let element"> {{element.LastName}} </td>
       </ng-container>
 
@@ -52,13 +54,13 @@
         <td mat-cell *matCellDef="let element"> {{element.Gender.Description}} </td>
       </ng-container>
 
-       <!-- Edit Column -->
-       <ng-container matColumnDef="Edit">
-        <th mat-header-cell *matHeaderCellDef>  </th>
+      <!-- Edit Column -->
+      <ng-container matColumnDef="Edit">
+        <th mat-header-cell *matHeaderCellDef> </th>
         <td mat-cell *matCellDef="let element">
-            <a [routerLink]="['/students',element.Id]">
-              <mat-icon color="primary">edit</mat-icon>
-            </a>
+          <a [routerLink]="['/students',element.Id]">
+            <mat-icon color="primary">edit</mat-icon>
+          </a>
         </td>
       </ng-container>
 
